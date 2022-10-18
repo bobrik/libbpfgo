@@ -11,7 +11,6 @@ import (
 	"debug/elf"
 	"encoding/binary"
 	"fmt"
-	"log"
 	"net"
 	"path/filepath"
 	"strings"
@@ -408,8 +407,6 @@ func (m *Module) InitGlobalVariable(name string, value interface{}) error {
 	if err != nil {
 		return err
 	}
-	log.Println(s.Symbol)
-	log.Println(s.ByteOrder.String())
 	bpfMap, err := m.GetMap(s.Section.Name)
 	if err != nil {
 		return err

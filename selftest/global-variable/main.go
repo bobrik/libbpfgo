@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"time"
 
 	bpf "github.com/aquasecurity/libbpfgo"
 )
@@ -51,6 +50,4 @@ func main() {
 	if err := bpfModule.BPFLoadObject(); err != nil {
 		exitWithErr(err)
 	}
-
-	time.Sleep(time.Hour * 12)
 }
